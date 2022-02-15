@@ -3,7 +3,7 @@
 *, *::after, *::before{
     box-sizing: border-box;
 }
-/*:root will make the changes to the entire css document*/
+/*:root changes will apply to the entire css document*/
 :root{
     --hue: 500;
     --saturation: 50%;
