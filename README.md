@@ -8,7 +8,10 @@ Explain the controls and how to play the game:
             If the ball will hit the wall during the play then it will be score for the other player.
 
 List the technologies used to build the game:
-            VS Code, Github, HTML, Javascript, CSS, 
+            VS Code, Github, 
+            HTML, Javascript, CSS, 
             1 html file
             1 CSS file
             
+BONUS QUESTION RESEARCH:
+    How to add music to the game?
