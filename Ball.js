@@ -1,5 +1,6 @@
 // initial velocity of the ball 
 const INITIAL_VELOCITY = .025
+const VELOCITY_INCREASE = .00001
 
 
 /*Set an export default for our class Ball*/
@@ -58,13 +59,18 @@ export default class Ball{
         this.x += this.direction.x * this.velocity * delta
         this.y += this.direction.y * this.velocity * delta
 
+        // Velocity of the ball increases gradually during the game
+        this.velocity +=VELOCITY_INCREASE * delta
          // Rect To keep the ball within the boundaries of the rectangle of the page
          const rect = this.rect()
-        // if hit the bottom move upward on y axis; if hit top move downwards on y axis
+        // if ball hit the bottom move upward on y axis; if hit top move downwards on y axis
          if (rect.bottom >= window.innerHeight || rect.top <= 0){
              this.direction.y *= -1
          }
-
+         //if ball hit the sides move left or right on x axis
+         if (rect.right >= window.innerWidth || rect.left <= 0){
+            this.direction.x *= -1
+        }
     }
 }
    // getting random ball direction every time
