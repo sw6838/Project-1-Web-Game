@@ -27,6 +27,11 @@ export default class Ball{
         this.ballElem.style.setProperty("--y", value)
     }
 
+    // Function Rect To keep the ball within the boundaries of the rectangle of the page
+    rect() {
+        return this.ballElem.getBoundingClientRect()
+    }
+
     // To reset balls and paddles at 50% in the middle of the page
     reset(){
         this.x = 50
@@ -52,6 +57,13 @@ export default class Ball{
         and move the ball with the frame time*/
         this.x += this.direction.x * this.velocity * delta
         this.y += this.direction.y * this.velocity * delta
+
+         // Rect To keep the ball within the boundaries of the rectangle of the page
+         const rect = this.rect()
+        // if hit the bottom move upward on y axis; if hit top move downwards on y axis
+         if (rect.bottom >= window.innerHeight || rect.top <= 0){
+             this.direction.y *= -1
+         }
 
     }
 }
