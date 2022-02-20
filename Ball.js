@@ -1,3 +1,6 @@
+// initial velocity of the ball 
+const INITIAL_VELOCITY = .025
+
 
 /*Set an export default for our class Ball*/
 export default class Ball{
@@ -35,16 +38,24 @@ export default class Ball{
                 // take that direction and convert it into x and y position
                 this.direction = {x: Math.cos(heading), y: Math.sin(heading)}
         }
-        console.log(this.direction)
+        // initial velocity of the ball 
+        this.velocity = INITIAL_VELOCITY
     }
+
+    
 
     // update function takes in delta script.js
     update(delta) {
-        this.x = 5
-        this.y = 15
+        /*take the direction x or y, multiply it by velocity 
+        to calculate total movement 
+        and times delta for long delays in the frame
+        and move the ball with the frame time*/
+        this.x += this.direction.x * this.velocity * delta
+        this.y += this.direction.y * this.velocity * delta
 
     }
 }
+   // getting random ball direction every time
     function randomNumberBetween(min, max) {
         return Math.random() * (max-min) + min
         
