@@ -51,7 +51,7 @@ export default class Ball{
     
 
     // update function takes in delta script.js
-    update(delta) {
+    update(delta, paddleRects) {
         /*take the direction x or y, multiply it by velocity 
         to calculate total movement 
         and times delta for long delays in the frame
@@ -67,8 +67,8 @@ export default class Ball{
          if (rect.bottom >= window.innerHeight || rect.top <= 0){
              this.direction.y *= -1
          }
-         //if ball hit the sides move left or right on x axis
-         if (rect.right >= window.innerWidth || rect.left <= 0){
+         //if any of the paddles had the collision with the ball
+         if (paddleRects.some(r => isCollision(r, rect))){
             this.direction.x *= -1
         }
     }
@@ -77,4 +77,13 @@ export default class Ball{
     function randomNumberBetween(min, max) {
         return Math.random() * (max-min) + min
         
+    }
+
+    function isCollision(rect1, rect2){
+        return rect1.left <= rect2.right &&
+               rect1.right >= rect2.left &&
+               rect1.top <= rect2.bottom &&
+               rect1.bottom >= rect2.top
+
+
     }
