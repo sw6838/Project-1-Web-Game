@@ -1,5 +1,6 @@
 # Project-1-Web-Game
-Source:  (YouTube Video Link: https://www.youtube.com/watch?v=PeY6lXPrPaA )
+Source:  (Web Dev Simplified
+    YouTube Video Link: https://www.youtube.com/watch?v=PeY6lXPrPaA )
 
 Inspiration for the Game:
             I Just wanted to start with an easy game, and when I searched online for the simple java games there were only few choices like Tic, Tac, Toe; Pong and Maze game. I found Pong easy to understand so I chose Pong.
@@ -14,6 +15,8 @@ List the technologies used to build the game:
             HTML, Javascript, CSS, 
             1 html file
             1 CSS file
+            3 Javascript Files
+            1 Readme
             
 BONUS QUESTION RESEARCH:
     How to add music to the game?

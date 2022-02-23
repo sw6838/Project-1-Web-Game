@@ -25,9 +25,9 @@ function update(time) {
         if (isLose()) handleLose()
     }
         
+  //Every frame is going to call update loop function
         lastTime = time
     
-  //Every frame is going to call update loop function
    window.requestAnimationFrame(update)
 }
 
